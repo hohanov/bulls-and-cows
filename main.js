@@ -108,7 +108,7 @@ const createLeaderboard = () => {
     const header = createElement('thead');
     const headerRow = createElement('tr');
     ['Раунд', 'Ходы / время'].forEach((heading) => {
-        const cell = createElement('th', 'text-nowrap', heading);
+        const cell = createElement('th', '', heading);
         cell.scope = 'col';
         headerRow.append(cell);
     });
@@ -118,12 +118,10 @@ const createLeaderboard = () => {
         .slice(0, SCORE_LIMIT)
         .forEach((record, index) => {
         const row = createElement('tr');
-        const rank = createElement('th', 'text-nowrap', `#${index + 1} · ${record.length} ${formatBase(record.base).toUpperCase()}`);
+        const rank = createElement('th', '', `#${index + 1} · ${record.length} ${formatBase(record.base).toUpperCase()}`);
         rank.scope = 'row';
         const result = createElement('td');
-        result.className = 'text-nowrap';
         result.textContent = `${record.attempts} · ${formatDuration(record.elapsedMs)}`;
-        result.setAttribute('aria-label', `Количество ходов: ${record.attempts}; время: ${formatDuration(record.elapsedMs)}`);
         row.append(rank, result);
         body.append(row);
     });
