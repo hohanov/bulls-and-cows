@@ -1,5 +1,5 @@
-import { evaluateGuess } from './evaluateGuess';
-import { isValidGuess } from './isValidGuess';
+import { evaluateGuess } from './evaluateGuess.js';
+import { isValidGuess } from './isValidGuess.js';
 
 export type GameSettings = Readonly<{
     length: number;

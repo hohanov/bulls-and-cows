@@ -1,4 +1,4 @@
-import { createDigitValidator } from './digitValidator';
+import { createDigitValidator } from './digitValidator.js';
 
 export const isValidGuess = (guess: string, length: number, base: number): boolean => {
     if (!Number.isInteger(length) || length < 1 || guess.length !== length) {
